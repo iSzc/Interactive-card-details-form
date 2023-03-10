@@ -1,7 +1,7 @@
-<h1 align="center">News Homepage</h1>
+<h1 align="center">Interactve Card Details Form</h1>
 
 <p align="center">
-  <img alt="News Homepage" src="design/desktop-design.jpg">
+  <img alt="Interactive Card" src="design/desktop-design.jpg">
 </p>
 
 ## 💣 Projeto
