@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Interactive card details form</title>
+    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="./src/responsive.css" />
+    <script src="./src/index.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main-card">
+        <div class="left-content">
+          <div class="front-card">
+            <div class="logo-card">
+              <img
+                class="logo-card-img"
+                src="./images/card-logo.svg"
+                alt="Logo Card"
+              />
+            </div>
+            <div class="info-card">
+              <div class="card-numbers">
+                <span id="card-numbers">0000 0000 0000 0000</span>
+              </div>
+              <div class="info-card-bot">
+                <div class="card-name">
+                  <span id="card-name">JANE APPLESEED</span>
+                </div>
+                <div class="card-valid-date">
+                  <span id="card-valid-month">00</span>
+                  <span>/</span>
+                  <span id="card-valid-year">00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="back-card">
+            <div class="back-card2">
+              <img src="./images/bg-card-back2.png" class="back-img" />
+            </div>
+            <div class="cvc-back-card">
+              <span id="cvc-span">000</span>
+            </div>
+          </div>
+        </div>
+        <div class="right-content">
+          <div class="apply" style="display: none" id="apply">
+            <div class="img">
+              <img src="./images/icon-complete.svg" alt="Complete" />
+            </div>
+            <span class="ty">THANK YOU!</span>
+            <span class="ty-description">We've added your card details</span>
+            <div class="continue-btn">
+              <button class="continue-button" id="continue">Continue</button>
+            </div>
+          </div>
+          <div class="form-div" id="form-div">
+            <div class="first-input">
+              <label for="name"
+                >CARDHOLDER NAME
+                <span class="empty-field-name" id="empty-field-name"
+                  >Preencha o campo abaixo</span
+                >
+              </label>
+              <input
+                type="text"
+                name="name"
+                id="name-input"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="30"
+                placeholder="e.g. Jane Appleseed"
+              />
+            </div>
+            <div class="second-input">
+              <label for="number"
+                >CARD NUMBER
+                <span class="empty-field-number" id="empty-field-number"
+                  >Preencha o campo abaixo</span
+                >
+              </label>
+              <input
+                type="number"
+                name="number"
+                id="number-input"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                onkeypress="return onlynumber();"
+                maxlength="16"
+                placeholder="Card Number e.g. 1234 5678 9123 0000"
+              />
+            </div>
+            <div class="inputsameline">
+              <div class="samelineleft">
+                <div class="datespan">
+                  <label for="date">EXP. DATE (MM/YY)</label>
+                </div>
+                <div class="date-input">
+                  <input
+                    type="number"
+                    name="date"
+                    id="mm-input"
+                    placeholder="MM"
+                    maxlength="2"
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    onkeypress="return onlynumber();"
+                  />
+                  <input
+                    type="number"
+                    name="date"
+                    id="yy-input"
+                    placeholder="YY"
+                    maxlength="2"
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    onkeypress="return onlynumber();"
+                  />
+                </div>
+              </div>
+              <div class="samelineright">
+                <label for="cvc"
+                  >CVC
+                  <span class="empty-field-date" id="empty-field-date"
+                    >Preencha os campo abaixo</span
+                  >
+                </label>
+                <input
+                  type="number"
+                  name="cvc"
+                  id="cvc-input"
+                  placeholder="e.g. 123"
+                  maxlength="3"
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                  onkeypress="return onlynumber();"
+                />
+              </div>
+            </div>
+            <div class="confirmbutton">
+              <button class="btn" id="button">Confirm</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
